@@ -14,8 +14,8 @@ console.log(getComputerChoice());
 
 function getHumanChoice() {
 
-    const userInput = prompt("Enter rock, paper, or scissors:");
-
+    let userInput = prompt("Enter rock, paper, or scissors:");
+    userInput = userInput.toLowerCase()
     return userInput;
 }
 
@@ -25,7 +25,8 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-    // your code here!
+    
+
   }
   
   const humanSelection = getHumanChoice();

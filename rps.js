@@ -17,7 +17,8 @@ let gameOver = false;
 const roundResult = document.querySelector("#round-result");
 const scoreDisplay = document.querySelector("#score");
 const winnerDisplay = document.querySelector("#winner");
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".choice");
+const restartButton = document.querySelector("#restart");
 
 function playRound(humanChoice, computerChoice) {
     const winConditions = {
@@ -43,7 +44,20 @@ function playRound(humanChoice, computerChoice) {
         winnerDisplay.textContent =
             humanScore === 5 ? "You win the game!" : "Computer wins the game!";
         buttons.forEach((button) => (button.disabled = true));
+        restartButton.hidden = false;
+        restartButton.focus();
     }
+}
+
+function restartGame() {
+    humanScore = 0;
+    computerScore = 0;
+    gameOver = false;
+    roundResult.textContent = "";
+    scoreDisplay.textContent = "Score — You: 0 | Computer: 0";
+    winnerDisplay.textContent = "";
+    restartButton.hidden = true;
+    buttons.forEach((button) => (button.disabled = false));
 }
 
 buttons.forEach((button) => {
@@ -52,3 +66,5 @@ buttons.forEach((button) => {
         playRound(button.id, getComputerChoice());
     });
 });
+
+restartButton.addEventListener("click", restartGame);

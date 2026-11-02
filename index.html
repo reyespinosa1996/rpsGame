@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rpsGame</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+    <main class="game">
+        <header class="game__header">
+            <p class="game__eyebrow">Best of 5</p>
+            <h1 class="game__title">Rock Paper Scissors</h1>
+            <p class="game__subtitle">Pick your move and beat the computer.</p>
+        </header>
 
-    <div id="results">
-        <p id="round-result"></p>
-        <p id="score"></p>
-        <p id="winner"></p>
-    </div>
+        <div class="choices">
+            <button id="rock" class="choice">Rock</button>
+            <button id="paper" class="choice">Paper</button>
+            <button id="scissors" class="choice">Scissors</button>
+        </div>
+
+        <div id="results" class="results" aria-live="polite">
+            <p id="round-result" class="results__round"></p>
+            <p id="score" class="results__score"></p>
+            <p id="winner" class="results__winner"></p>
+        </div>
+
+        <button id="restart" class="restart" hidden>Play Again</button>
+    </main>
 
     <script src="./rps.js"></script>
 </body>

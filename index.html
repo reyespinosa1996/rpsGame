@@ -11,7 +11,7 @@
         <header class="game__header">
             <p class="game__eyebrow">Best of 5</p>
             <h1 class="game__title">Rock Paper Scissors</h1>
-            <p class="game__subtitle">Pick your move and beat the computer.</p>
+            <p class="game__subtitle">Pick your move and beat your opponent.</p>
         </header>
 
         <div class="choices">
@@ -27,6 +27,36 @@
         </div>
 
         <button id="restart" class="restart" hidden>Play Again</button>
+
+        <!-- Mode Selection Screen -->
+        <div id="mode-selection" class="mode-selection">
+            <h2>Select Game Mode</h2>
+            <div class="mode-options">
+                <button class="mode-btn vs-computer" data-mode="vs-computer">Vs Computer</button>
+                <button class="mode-btn vs-player" data-mode="vs-player">Vs Player</button>
+            </div>
+        </div>
+
+        <!-- Multiplayer Setup Screen -->
+        <div id="multiplayer-setup" class="multiplayer-setup hidden">
+            <h2>Player Names</h2>
+            <div class="player-inputs">
+                <div class="player-input">
+                    <label for="player1-name">Player 1</label>
+                    <input type="text" id="player1-name" placeholder="Player 1" required>
+                </div>
+                <div class="player-input">
+                    <label for="player2-name">Player 2</label>
+                    <input type="text" id="player2-name" placeholder="Player 2" required>
+                </div>
+            </div>
+            <button id="start-multiplayer" class="restart">Start Multiplayer Game</button>
+        </div>
+
+        <!-- Current Player Indicator -->
+        <div id="current-player" class="current-player hidden">
+            <p>Current Player: <span id="player-turn"></span></p>
+        </div>
     </main>
 
     <script src="./rps.js"></script>
